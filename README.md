@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/carloscinelli/NetworkRiskMeasures.svg?branch=master)](https://travis-ci.org/carloscinelli/NetworkRiskMeasures) [![Coverage Status](https://img.shields.io/codecov/c/github/carloscinelli/NetworkRiskMeasures/master.svg)](https://codecov.io/github/carloscinelli/NetworkRiskMeasures?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/carloscinelli/NetworkRiskMeasures.svg?branch=master)](https://travis-ci.org/carloscinelli/NetworkRiskMeasures) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/NetworkRiskMeasures)](https://cran.r-project.org/package=NetworkRiskMeasures) [![Coverage Status](https://img.shields.io/codecov/c/github/carloscinelli/NetworkRiskMeasures/master.svg)](https://codecov.io/github/carloscinelli/NetworkRiskMeasures?branch=master) ![](http://cranlogs.r-pkg.org/badges/NetworkRiskMeasures)
 
 The Network Risk Measures (`NetworkRiskMeasures`) package implements a set of tools to analyze systemic risk in (financial) networks in a unified framework. We currently have implemented:
 
@@ -35,7 +35,7 @@ Example usage
 Many regulators have data on total interbank exposures but do not observe the ***network*** of bilateral exposures. That is, they only know the marginals of the interbank adjacency matrix. Consider the example below with 7 fictitious banks -- banks A through G (Anand et al, 2015, p.628):
 
 <center>
-![](README-observable.png)
+![](tools/observable.png)
 </center>
 We know how much each bank has in the interbank market in the form of assets and liabilities (row and column sums)--but we do not know how each bank is related to each other. In those cases, if one wants to run contagion simulations or assess other risk measures, it is necessary to ***estimate*** the interbank network.
 
@@ -211,7 +211,7 @@ ggplot(netdf, aes(x = x, y = y, xend = xend, yend = yend)) +
   theme_blank()
 ```
 
-<img src="README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="tools/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 As one can see, the resulting network is sparse and disassortative:
 
@@ -296,7 +296,7 @@ Take, for instance, the results for bank `b55`. It represents 11% of our simulat
 plot(contdr)
 ```
 
-<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="tools/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 You don't need to interpret these results too literally. You could use the additional stress indicator (the DebtRank) as a measure of the systemic importance of the institution:
 
@@ -432,7 +432,7 @@ summary(cont)
 plot(cont, size = 2.2)
 ```
 
-![](README-unnamed-chunk-23-1.png)
+![](tools/unnamed-chunk-23-1.png)
 
 In this example, a 5% shock in all banks causes an additional stress of 20% in the system, an amplification of 4 times the initial shock.
 
