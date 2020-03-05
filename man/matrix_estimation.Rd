@@ -2,20 +2,36 @@
 % Please edit documentation in R/matrix_estimation.R
 \name{matrix_estimation}
 \alias{matrix_estimation}
-\alias{matrix_estimation}
 \alias{max_ent}
-\alias{matrix_estimation}
 \alias{min_dens}
 \title{Matrix Estimation}
 \usage{
-matrix_estimation(rowsums, colsums, method = c("me", "md"), ...,
-  max.it = 1e+05, abs.tol = 0.001, verbose = TRUE)
+matrix_estimation(
+  rowsums,
+  colsums,
+  method = c("me", "md"),
+  ...,
+  max.it = 1e+05,
+  abs.tol = 0.001,
+  verbose = TRUE
+)
 
 max_ent(rowsums, colsums, max.it = 1e+05, abs.tol = 0.001, verbose = TRUE)
 
-min_dens(rowsums, colsums, c = 1, lambda = 1, k = 100,
-  alpha = 1/sum(rowsums), delta = 1/sum(rowsums), theta = 1,
-  remove.prob = 0.01, max.it = 1e+05, abs.tol = 0.001, verbose = TRUE)
+min_dens(
+  rowsums,
+  colsums,
+  c = 1,
+  lambda = 1,
+  k = 100,
+  alpha = 1/sum(rowsums),
+  delta = 1/sum(rowsums),
+  theta = 1,
+  remove.prob = 0.01,
+  max.it = 1e+05,
+  abs.tol = 0.001,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{rowsums}{a numeric vector with the row sums.}
@@ -38,13 +54,13 @@ See Anand et al. (2015).}
 
 \item{lambda}{you should use \code{lamda} 
 together with \code{k}. For the first \code{k} rounds of 
-the algorithm, the function will alocate a fraction \code{lambda} of the total,
+the algorithm, the function will allocate a fraction \code{lambda} of the total,
 thus obtaining a "low density" solution, instead of a "minimum density" solution.
 See Anand et al. (2015).}
 
 \item{k}{you should use \code{lamda} 
 together with \code{k}. For the first \code{k} rounds of 
-the algorithm, the function will alocate a fraction \code{lambda} of the total,
+the algorithm, the function will allocate a fraction \code{lambda} of the total,
 thus obtaining a "low density" solution, instead of a "minimum density" solution.
 See Anand et al. (2015).}
 
@@ -90,7 +106,7 @@ MD <- matrix_estimation(A, L, method = "md")
 
 }
 \references{
-Upper, C. and A. Worm (2004). Estimating bilateral exposures in the german interbank market:
+Upper, C. and A. Worm (2004). Estimating bilateral exposures in the German interbank market:
  Is there a danger of contagion? European Economic Review 48, 827-849.
 
  Anand, K., Craig, B. and G. von Peter (2015). Filling in the blanks:
