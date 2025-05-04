@@ -48,20 +48,20 @@ criticality <- function(exposures,
 ##' M[i,j] can be interpreted as the weighted sums of paths from i to j. 
 ##' Recall that exp(M) can be cast into a Taylor series expansion with an 
 ##' infinite number additive terms. 
-##' The function permits the evaluation of exp(M) using the \code{\link{expm}} package 
+##' The function permits the evaluation of exp(M) using the \code{expm} package 
 ##' or using a simpler mathematical approximation. 
 ##' In the second case, the function truncates the infinite series by 
 ##' simply calculating the summation terms up to a pre-defined number of factors.
 ##' 
 ##'
-##' @param x a square \code{\link{matrix}} or an \code{\link[igraph]{igraph}} object.
+##' @param x a square \code{\link{matrix}} or an \code{igraph} object.
 ##'
 ##' @param terms truncates the communicability matrix evaluation up to a pre-defined number of terms.
-##' If \code{terms = Inf} the function computes the matrix exponential using \code{\link{expm}}.
+##' If \code{terms = Inf} the function computes the matrix exponential using \code{expm}.
 ##'
 ##' @param sparse should the function use sparse matrices when computing the communicability? 
 ##' However, if \code{terms = Inf}
-##' the function will use \code{\link{expm}} which uses \code{\link{dgeMatrix-class}}.
+##' the function will use \code{expm} which uses \code{dgeMatrix-class}.
 ##'
 ##' @return The function returns the communicability matrix.
 ##'

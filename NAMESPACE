@@ -3,6 +3,8 @@
 S3method(c,Matrix)
 S3method(communicability_matrix,default)
 S3method(communicability_matrix,igraph)
+S3method(make_shock,character)
+S3method(make_shock,numeric)
 S3method(plot,contagion)
 S3method(plot,contagion_summary)
 S3method(print,contagion)

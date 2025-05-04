@@ -4,7 +4,9 @@
 \name{sim_data}
 \alias{sim_data}
 \title{Simulated Interbank Data}
-\format{A data frame with 125 rows and 5 variables}
+\format{
+A data frame with 125 rows and 5 variables
+}
 \description{
 A simulated dataset with interbank assets, liabilities, capital buffer and weights for
 125 "banks". The code to generate the data is on the examples.

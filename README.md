@@ -1,11 +1,12 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 [![Travis-CI Build
-Status](https://travis-ci.org/carloscinelli/NetworkRiskMeasures.svg?branch=master)](https://travis-ci.org/carloscinelli/NetworkRiskMeasures)
+Status](https://travis-ci.org/carloscinelli/NetworkRiskMeasures.svg?branch=master)](https://app.travis-ci.com/carloscinelli/NetworkRiskMeasures)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/lgdhonejqpca0o09/branch/master?svg=true)](https://ci.appveyor.com/project/carloscinelli/networkriskmeasures/branch/master)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/NetworkRiskMeasures)](https://cran.r-project.org/package=NetworkRiskMeasures)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NetworkRiskMeasures)](https://cran.r-project.org/package=NetworkRiskMeasures)
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/carloscinelli/NetworkRiskMeasures/master.svg)](https://codecov.io/github/carloscinelli/NetworkRiskMeasures?branch=master)
+Status](https://img.shields.io/codecov/c/github/carloscinelli/NetworkRiskMeasures/master.svg)](https://app.codecov.io/github/carloscinelli/NetworkRiskMeasures?branch=master)
 ![](http://cranlogs.r-pkg.org/badges/NetworkRiskMeasures)
 
 The Network Risk Measures (`NetworkRiskMeasures`) package implements a
@@ -23,8 +24,7 @@ unified framework. We currently have implemented:
     impact susceptibility, impact diffusion and impact fluidity (Silva
     et al 2015a and 2015b).
 
-CRAN
-----
+## CRAN
 
 To install the CRAN version run:
 
@@ -32,8 +32,7 @@ To install the CRAN version run:
 install.packages("NetworkRiskMeasures")
 ```
 
-How to install the development version from GitHub
---------------------------------------------------
+## How to install the development version from GitHub
 
 To install the GitHub version you need to have the package `devtools`
 installed. Make sure to set the option `build_vignettes = TRUE` to
@@ -44,16 +43,14 @@ compile the package vignette (not available yet).
 devtools::install_github("carloscinelli/NetworkRiskMeasures", build_vignettes = TRUE)
 ```
 
-We are looking for interesting public datasets!
------------------------------------------------
+## We are looking for interesting public datasets!
 
 Most bilateral exposures data are confidential and can’t be used as
 examples on the package. So we are looking for interesting, public
 datasets on bilateral exposures for that purpose. If you have any
 suggestions, please let us know!
 
-Example usage
--------------
+## Example usage
 
 ### Filling in the blanks: estimating the adjacency matrix
 
@@ -65,10 +62,12 @@ example below with 7 fictitious banks – banks A through G (Anand et al,
 
 <!-- </br> -->
 <!-- <center> -->
+
 ![](tools/observable.png)
 
 <!-- </center> -->
 <!-- </br> -->
+
 We know how much each bank has in the interbank market in the form of
 assets and liabilities (row and column sums)–but we do not know how each
 bank is related to each other. In those cases, if one wants to run
@@ -201,6 +200,7 @@ on uncovering financial network structure from partial data</a> from
 School</a> on <a href="https://vimeo.com">Vimeo</a>.
 </p>
 <!-- </center> -->
+
 </br>
 
 ### Measuring risk: finding systemically important institutions and simulating scenarios
@@ -307,8 +307,6 @@ packages like `igraph`:
 sim_data$degree <- igraph::degree(gmd)
 sim_data$btw    <- igraph::betweenness(gmd)
 sim_data$close  <- igraph::closeness(gmd)
-#> Warning in igraph::closeness(gmd): At centrality.c:2617 :closeness centrality is not well-defined for disconnected
-#> graphs
 sim_data$eigen  <- igraph::eigen_centrality(gmd)$vector
 sim_data$alpha  <- igraph::alpha_centrality(gmd, alpha = 0.5)
 ```
@@ -452,20 +450,20 @@ Now we have all of our indicators in the `sim_data` `data.frame`:
 
 ``` r
 head(sim_data)
-#>   bank     assets liabilities   buffer   weights degree btw        close        eigen    alpha imps     impd
-#> 1   b1 0.37490927   9.6317127 5.628295 17.119551      3   2 6.556732e-05 0.0319455864 6.931642    0 41.39988
-#> 2   b2 0.66805904   0.7126552 2.847072  6.004475      2  16 6.775653e-05 0.0027179985 1.935979    0  0.00000
-#> 3   b3 0.79064804   0.3089983 3.983451  6.777531      2   0 6.719784e-05 0.0053344470 1.136058    0  0.00000
-#> 4   b4 0.02420156   0.6562193 5.657779  7.787618      2   3 6.777418e-05 0.0002681628 1.488546    0  0.00000
-#> 5   b5 0.65294261   0.9153901 4.446595  8.673730      2   1 6.556614e-05 0.0045861443 2.623180    0 58.60687
-#> 6   b6 0.60766835   0.3007373 2.252369  4.708805      2   0 6.720197e-05 0.0047153984 1.132420    0  0.00000
-#>      DebtRank     cascade
-#> 1 0.091307438 0.020415431
-#> 2 0.001402345 0.001066810
-#> 3 0.037028664 0.005638458
-#> 4 0.027873667 0.001197128
-#> 5 0.115430423 0.047389235
-#> 6 0.036324739 0.005487714
+#>   bank     assets liabilities   buffer   weights degree btw     close        eigen    alpha imps     impd    DebtRank
+#> 1   b1 0.37490927   9.6317127 5.628295 17.119551      3   2 0.6664736 0.0319455864 6.931642    0 41.39988 0.091307438
+#> 2   b2 0.66805904   0.7126552 2.847072  6.004475      2  16 0.1146101 0.0027179985 1.935979    0  0.00000 0.001402345
+#> 3   b3 0.79064804   0.3089983 3.983451  6.777531      2   0 0.1554913 0.0053344470 1.136058    0  0.00000 0.037028664
+#> 4   b4 0.02420156   0.6562193 5.657779  7.787618      2   3 0.2048776 0.0002681628 1.488546    0  0.00000 0.027873667
+#> 5   b5 0.65294261   0.9153901 4.446595  8.673730      2   1 0.5633181 0.0045861443 2.623180    0 58.60687 0.115430423
+#> 6   b6 0.60766835   0.3007373 2.252369  4.708805      2   0 0.1812800 0.0047153984 1.132420    0  0.00000 0.036324739
+#>       cascade
+#> 1 0.020415431
+#> 2 0.001066810
+#> 3 0.005638458
+#> 4 0.001197128
+#> 5 0.047389235
+#> 6 0.005487714
 ```
 
 We may see how some of these different metrics rank each of the nodes.
@@ -558,22 +556,22 @@ To be expanded.
 
 [Anand, K., Craig, B. and G. von Peter (2015). Filling in the blanks:
 network structure and interbank contagion. Quantitative Finance 15:4,
-625-636.](http://www.tandfonline.com/doi/full/10.1080/14697688.2014.968195)
+625-636.](https://www.tandfonline.com/doi/full/10.1080/14697688.2014.968195)
 
 [Bardoscia M, Battiston S, Caccioli F, Caldarelli G (2015) DebtRank: A
 Microscopic Foundation for Shock Propagation. PLoS ONE 10(6): e0130406.
 doi:
-10.1371/journal.pone.0130406](http://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0130406)
+10.1371/journal.pone.0130406](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0130406)
 
 [Silva, T.C.; Souza, S.R.S.; Tabak, B.M. (2015) Monitoring vulnerability
 and impact diffusion in financial networks. Working Paper 392, Central
-Bank of Brazil.](http://www.bcb.gov.br/pec/wps/ingl/wps392.pdf)
+Bank of Brazil.](https://www.bcb.gov.br/pec/wps/ingl/wps392.pdf)
 
 [Silva, T.C.; Souza, S.R.S.; Tabak, B.M. (2015) Network structure
 analysis of the Brazilian interbank market . Working Paper 391, Central
-Bank of Brazil.](http://www.bcb.gov.br/pec/wps/ingl/wps391.pdf)
+Bank of Brazil.](https://www.bcb.gov.br/pec/wps/ingl/wps391.pdf)
 
 [Upper, C. and A. Worm (2004). Estimating bilateral exposures in the
 German interbank market: Is there a danger of contagion? European
 Economic Review 48,
-827-849.](http://www.sciencedirect.com/science/article/pii/S0014292104000145)
+827-849.](https://doi.org/10.1016/j.euroecorev.2003.12.009)

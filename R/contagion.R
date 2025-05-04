@@ -168,14 +168,18 @@ contagion <- function(exposures,
 
 # shocks ------------------------------------------------------------------
 
+
 make_shock <- function(shock, vertex_names){
   UseMethod("make_shock")
 }
 
+##' @export
 make_shock.character <- function(shock, vertex_names){
   shock <- (vertex_names %in% shock)*1
   return(shock)
 }
+
+##' @export
 make_shock.numeric <- function(shock, vertex_names){
   return(shock)
 }

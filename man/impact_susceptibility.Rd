@@ -37,7 +37,7 @@ impact_diffusion(
 )
 }
 \arguments{
-\item{exposures}{an adjacency \code{\link{matrix}}, (sparse) \code{\link{Matrix}} or an \code{\link[igraph]{igraph}}
+\item{exposures}{an adjacency \code{\link{matrix}}, (sparse) \code{Matrix} or an \code{igraph}
 object with the network of bilateral exposures between vertices. By default, the function
 expects the exposures in the form of an assets matrix
 in which A -> B means that A has an asset with B. However, you can
@@ -53,11 +53,11 @@ vector of weights to give some economic significance to the measures, like,
 for instance, the total assets of the nodes.}
 
 \item{terms}{truncates the communicability matrix evaluation up to a pre-defined number of terms.
-If \code{terms = Inf} the function computes the matrix exponential using \code{\link{expm}}.}
+If \code{terms = Inf} the function computes the matrix exponential using \code{expm}.}
 
 \item{sparse}{should the function use sparse matrices when computing the communicability? 
 However, if \code{terms = Inf}
-the function will use \code{\link{expm}} which uses \code{\link{dgeMatrix-class}}.}
+the function will use \code{expm} which uses \code{dgeMatrix-class}.}
 
 \item{binary}{if \code{binary = TRUE} the function computes a 'binary' impact or vulnerability matrix.
 It truncates all values less than 1 to 0 and all values greater than 1 to 1.}
